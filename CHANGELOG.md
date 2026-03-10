@@ -14,7 +14,6 @@ Docs: https://docs.openclaw.ai
 
 ### Fixes
 
-- CI/CodeQL Swift toolchain: select Xcode 26.1 before installing Swift build tools so the CodeQL Swift job uses Swift tools 6.2 on `macos-latest`. (#41787) thanks @BunsDev.
 - Resolve web tool SecretRefs atomically at runtime. (#41599) Thanks @joshavant.
 - Feishu/local image auto-convert: pass `mediaLocalRoots` through the `sendText` local-image shim so allowed local image paths upload as Feishu images again instead of falling back to raw path text. (#40623) Thanks @ayanesakura.
 - macOS/LaunchAgent install: tighten LaunchAgent directory and plist permissions during install so launchd bootstrap does not fail when the target home path or generated plist inherited group/world-writable modes.
@@ -50,6 +49,7 @@ Docs: https://docs.openclaw.ai
 - Telegram/final preview delivery: split active preview lifecycle from cleanup retention so missing archived preview edits avoid duplicate fallback sends without clearing the live preview or blocking later in-place finalization. (#41662) thanks @hougangdev.
 - Cron/state errors: record `lastErrorReason` in cron job state and keep the gateway schema aligned with the full failover-reason set, including regression coverage for protocol conformance. (#14382) thanks @futuremind2026.
 - Tools/web search: recover OpenRouter Perplexity citation extraction from `message.annotations` when chat-completions responses omit top-level citations. (#40881) Thanks @laurieluo.
+- CI/CodeQL Swift toolchain: select Xcode 26.1 before installing Swift build tools so the CodeQL Swift job uses Swift tools 6.2 on `macos-latest`. (#41787) thanks @BunsDev.
 
 ## 2026.3.8
 
